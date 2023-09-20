@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -83,11 +84,11 @@ fun LoginScreen(
         )
 
         Text(
-            "Welcome to App ",
+            text = stringResource(id =R.string.welcome_to_app),
             fontSize = 30.sp,
             fontStyle = FontStyle.Italic,
             fontWeight = FontWeight.Bold,
-            color = Color(android.graphics.Color.parseColor("#7d32a8"))
+            color = purpleColor
         )
 
 
@@ -119,9 +120,9 @@ fun LoginScreen(
             ),
 
             colors = TextFieldDefaults.textFieldColors(
-                containerColor = androidx.compose.ui.graphics.Color.Transparent,
-                focusedIndicatorColor = androidx.compose.ui.graphics.Color.Transparent,
-                unfocusedIndicatorColor = androidx.compose.ui.graphics.Color.Transparent
+                containerColor = Color.Transparent,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent
             ),
 
 
@@ -156,9 +157,9 @@ fun LoginScreen(
             ),
 
             colors = TextFieldDefaults.textFieldColors(
-                containerColor = androidx.compose.ui.graphics.Color.Transparent,
-                focusedIndicatorColor = androidx.compose.ui.graphics.Color.Transparent,
-                unfocusedIndicatorColor = androidx.compose.ui.graphics.Color.Transparent
+                containerColor = Color.Transparent,
+                focusedIndicatorColor = Color.Transparent,
+                unfocusedIndicatorColor = Color.Transparent
             ),
             visualTransformation = if (passVisibility) VisualTransformation.None else PasswordVisualTransformation(),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
@@ -188,21 +189,19 @@ fun LoginScreen(
         ) {
 
             Text(
-                text = "Login",
+                text = stringResource(id =R.string.login) ,
                 color = Color.White,
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
 
                 )
         }
-        Text(text = "Don't have an account? Sign Up",
+        Text(text = stringResource(id = R.string.forgot_password),
             color = purpleColor,
             fontSize = 14.sp,
             modifier = Modifier.padding(top=7.dp, bottom = 7.dp))
 
-        Row (
-
-        ){
+        Row{
             Image(painter = painterResource(id = R.drawable.google),
                 contentDescription ="" ,
                 Modifier. padding(7.dp)
