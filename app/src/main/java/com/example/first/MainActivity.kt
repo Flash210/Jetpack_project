@@ -41,6 +41,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.first.ui.theme.FirstTheme
+import com.example.first.ui.theme.navigation.AppNavigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,135 +53,18 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    login()
+
+                    AppNavigation()
                 }
             }
         }
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
-@Preview
-@Composable
-fun login() {
-    Column(
-        modifier = Modifier
-            .fillMaxHeight()
-            .fillMaxWidth()
-            .background(
-                color = Color(android.graphics.Color.parseColor("#ffffff"))
-            ),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Image(
-            painter = painterResource(id = R.drawable.top_background),
-            contentDescription = "Background Image",
-            contentScale = ContentScale.FillBounds
-        )
-
-        Image(
-            painter = painterResource(id = R.drawable.logo),
-            contentDescription = "Logo Image",
-            modifier = Modifier.height(150.dp)
-        )
-
-        Text(
-            "Welcome to App ",
-            fontSize = 30.sp,
-            fontStyle = FontStyle.Italic,
-            fontWeight = FontWeight.Bold,
-            color = Color(android.graphics.Color.parseColor("#7d32a8"))
-        )
-
-        var user by remember {
-            mutableStateOf("UserName")
-        }
-
-        var pass by remember {
-            mutableStateOf("")
-        }
-
-        var passVisibility by remember {
-            mutableStateOf(false)
-        }
-
-
-        TextField(
-            value = user,
-            { text ->
-                user = text
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(66.dp)
-                .padding(
-                    start = 66.dp,
-                    end = 66.dp,
-                    bottom = 7.dp,
-                    top = 7.dp
-                )
-                .border(
-                    1.dp, Color(android.graphics.Color.parseColor("#7d32a8")),
-                    shape = RoundedCornerShape(50)
-                ),
-            shape = RoundedCornerShape(50),
-            textStyle = TextStyle(
-                textAlign = TextAlign.Center,
-                color = Color(android.graphics.Color.parseColor("#7d32a8")),
-                fontSize = 14.sp
-            ),
-
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
-            ),
-
-
-            )
 
 
 
 
-        TextField(
-            value = pass,
-            { text ->
-                pass = text
-            },
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(66.dp)
-                .padding(
-                    start = 66.dp,
-                    end = 66.dp,
-                    bottom = 7.dp,
-                    top = 7.dp
-                )
-                .border(
-                    1.dp, Color(android.graphics.Color.parseColor("#7d32a8")),
-                    shape = RoundedCornerShape(50)
-                ),
-            shape = RoundedCornerShape(50),
-            textStyle = TextStyle(
-                textAlign = TextAlign.Center,
-                color = Color(android.graphics.Color.parseColor("#7d32a8")),
-                fontSize = 14.sp
-            ),
-
-            colors = TextFieldDefaults.textFieldColors(
-                containerColor = Color.Transparent,
-                focusedIndicatorColor = Color.Transparent,
-                unfocusedIndicatorColor = Color.Transparent
-            ),
-            visualTransformation = if (passVisibility) VisualTransformation.None else PasswordVisualTransformation(),
-            keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
 
 
-        )
-
-
-    }
-
-
-}
 
