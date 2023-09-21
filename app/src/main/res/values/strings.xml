@@ -3,4 +3,10 @@
     <string name="welcome_to_app">Welcome to App</string>
     <string name="login">Login</string>
     <string name="forgot_password" >"Don't have an account? Sign Up"</string>
+    <string name="My_Reviews">My Reviews</string>
+    <string name="Account_Settings">Account Settings </string>
+    <string name="Personal_Information"> Personal Information</string>
+    <string name="Notification">Notification</string>
+    <string name="Return">Return</string>
+
 </resources>
